@@ -1,0 +1,11 @@
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Contracts\bin\Debug\net8.0\NeoCart.Contracts.deps.json
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Contracts\bin\Debug\net8.0\NeoCart.Contracts.dll
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Contracts\bin\Debug\net8.0\NeoCart.Contracts.pdb
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Contracts\obj\Debug\net8.0\NeoCart.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Contracts\obj\Debug\net8.0\NeoCart.Contracts.AssemblyInfoInputs.cache
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Contracts\obj\Debug\net8.0\NeoCart.Contracts.AssemblyInfo.cs
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Contracts\obj\Debug\net8.0\NeoCart.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Contracts\obj\Debug\net8.0\NeoCart.Contracts.dll
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Contracts\obj\Debug\net8.0\refint\NeoCart.Contracts.dll
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Contracts\obj\Debug\net8.0\NeoCart.Contracts.pdb
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Contracts\obj\Debug\net8.0\ref\NeoCart.Contracts.dll

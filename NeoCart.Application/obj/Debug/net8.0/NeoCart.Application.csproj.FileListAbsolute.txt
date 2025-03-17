@@ -1,0 +1,15 @@
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Application\bin\Debug\net8.0\NeoCart.Application.deps.json
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Application\bin\Debug\net8.0\NeoCart.Application.dll
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Application\bin\Debug\net8.0\NeoCart.Application.pdb
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Application\bin\Debug\net8.0\NeoCart.Domain.dll
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Application\bin\Debug\net8.0\NeoCart.Domain.pdb
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Application\obj\Debug\net8.0\NeoCart.Application.csproj.AssemblyReference.cache
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Application\obj\Debug\net8.0\NeoCart.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Application\obj\Debug\net8.0\NeoCart.Application.AssemblyInfoInputs.cache
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Application\obj\Debug\net8.0\NeoCart.Application.AssemblyInfo.cs
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Application\obj\Debug\net8.0\NeoCart.Application.csproj.CoreCompileInputs.cache
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Application\obj\Debug\net8.0\NeoCart.Application.csproj.CopyComplete
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Application\obj\Debug\net8.0\NeoCart.Application.dll
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Application\obj\Debug\net8.0\refint\NeoCart.Application.dll
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Application\obj\Debug\net8.0\NeoCart.Application.pdb
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Application\obj\Debug\net8.0\ref\NeoCart.Application.dll

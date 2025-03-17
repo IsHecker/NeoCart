@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeoCart.Api", "NeoCart.Api\NeoCart.Api.csproj", "{0393DBFE-5977-401D-808A-CC4D8DDA5991}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeoCart.Infrastructure", "NeoCart.Infrastructure\NeoCart.Infrastructure.csproj", "{11B0C8CE-D249-46B8-9EA4-0BEC2CBE8DB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeoCart.Application", "NeoCart.Application\NeoCart.Application.csproj", "{0F819387-5CB1-45DF-84C6-40725470BD84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeoCart.Domain", "NeoCart.Domain\NeoCart.Domain.csproj", "{ADD31452-A055-4145-B8C4-E2886FC7FCE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeoCart.Contracts", "NeoCart.Contracts\NeoCart.Contracts.csproj", "{F48E69E4-FCD7-49D6-BA3D-B87B92449394}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0393DBFE-5977-401D-808A-CC4D8DDA5991}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0393DBFE-5977-401D-808A-CC4D8DDA5991}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0393DBFE-5977-401D-808A-CC4D8DDA5991}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0393DBFE-5977-401D-808A-CC4D8DDA5991}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11B0C8CE-D249-46B8-9EA4-0BEC2CBE8DB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11B0C8CE-D249-46B8-9EA4-0BEC2CBE8DB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11B0C8CE-D249-46B8-9EA4-0BEC2CBE8DB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11B0C8CE-D249-46B8-9EA4-0BEC2CBE8DB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F819387-5CB1-45DF-84C6-40725470BD84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F819387-5CB1-45DF-84C6-40725470BD84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F819387-5CB1-45DF-84C6-40725470BD84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F819387-5CB1-45DF-84C6-40725470BD84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADD31452-A055-4145-B8C4-E2886FC7FCE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADD31452-A055-4145-B8C4-E2886FC7FCE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADD31452-A055-4145-B8C4-E2886FC7FCE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADD31452-A055-4145-B8C4-E2886FC7FCE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F48E69E4-FCD7-49D6-BA3D-B87B92449394}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F48E69E4-FCD7-49D6-BA3D-B87B92449394}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F48E69E4-FCD7-49D6-BA3D-B87B92449394}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F48E69E4-FCD7-49D6-BA3D-B87B92449394}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

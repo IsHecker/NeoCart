@@ -1,0 +1,11 @@
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Domain\bin\Debug\net8.0\NeoCart.Domain.deps.json
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Domain\bin\Debug\net8.0\NeoCart.Domain.dll
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Domain\bin\Debug\net8.0\NeoCart.Domain.pdb
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Domain\obj\Debug\net8.0\NeoCart.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Domain\obj\Debug\net8.0\NeoCart.Domain.AssemblyInfoInputs.cache
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Domain\obj\Debug\net8.0\NeoCart.Domain.AssemblyInfo.cs
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Domain\obj\Debug\net8.0\NeoCart.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Domain\obj\Debug\net8.0\NeoCart.Domain.dll
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Domain\obj\Debug\net8.0\refint\NeoCart.Domain.dll
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Domain\obj\Debug\net8.0\NeoCart.Domain.pdb
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Domain\obj\Debug\net8.0\ref\NeoCart.Domain.dll

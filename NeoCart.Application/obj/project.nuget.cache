@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "lgd866Otp/M=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Mhamed\\RiderProjects\\NeoCart\\NeoCart.Application\\NeoCart.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mhamed\\.nuget\\packages\\mediatr\\12.4.1\\mediatr.12.4.1.nupkg.sha512",
+    "C:\\Users\\Mhamed\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\Mhamed\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.2\\microsoft.extensions.dependencyinjection.abstractions.9.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
