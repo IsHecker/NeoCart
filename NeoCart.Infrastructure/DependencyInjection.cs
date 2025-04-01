@@ -16,8 +16,9 @@ public static class DependencyInjection
     public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddDbContext<AppDbContext>(opts =>
-            opts.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
-        
+            opts.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
+                .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
+
         services.AddIdentity<IdentityUser<Guid>, IdentityRole<Guid>>(opts =>
             {
                 opts.Password.RequiredLength = 4;

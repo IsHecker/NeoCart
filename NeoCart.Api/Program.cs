@@ -1,9 +1,12 @@
+using System.Text.Json.Serialization;
+using Asp.Versioning;
+using Microsoft.AspNetCore.Mvc;
 using NeoCart.Application;
 using NeoCart.Infrastructure;
 
 namespace NeoCart.Api;
 
-public class Program
+public static class Program
 {
     public static void Main(string[] args)
     {
@@ -13,10 +16,22 @@ public class Program
         builder.Services.AddAuthorization();
         builder.Services.AddControllers();
 
+        builder.Services.AddApiVersioning(opts =>
+        {
+            opts.DefaultApiVersion = new ApiVersion(1.0);
+            opts.AssumeDefaultVersionWhenUnspecified = true;
+            opts.ReportApiVersions = true;
+            opts.ApiVersionReader = new MediaTypeApiVersionReader("version");
+        }).AddMvc();
+
+
+        builder.Services.Configure<JsonOptions>(opts =>
+            opts.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull);
+
         builder.Services
             .AddApplication()
             .AddInfrastructure(builder.Configuration);
-        
+
 
         var app = builder.Build();
 
@@ -24,12 +39,6 @@ public class Program
         app.UseAuthentication();
         app.UseAuthorization();
         app.MapControllers();
-        
-        // using (var scope = app.Services.CreateScope())
-        // {
-        //     var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-        //     dbContext.Database.Migrate(); // Auto-run migrations
-        // }
 
         app.Run();
     }

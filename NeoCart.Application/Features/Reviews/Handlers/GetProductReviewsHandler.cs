@@ -16,6 +16,7 @@ public class GetProductReviewsHandler : IRequestHandler<GetProductReviewsQuery, 
 
     public async Task<IEnumerable<Review>> Handle(GetProductReviewsQuery request, CancellationToken cancellationToken)
     {
-        return (await _reviewRepository.GetAllReviewsAsync()).Where(review => review.ProductId == request.ProductId);
+        return (await _reviewRepository.GetAllReviewsAsync()).Where(review => review.ProductId == request.ProductId)
+            .Paginate(request.PaginationParams);
     }
 }

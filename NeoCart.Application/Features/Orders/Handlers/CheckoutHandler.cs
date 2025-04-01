@@ -44,7 +44,7 @@ public class CheckoutHandler : IRequestHandler<CheckoutCommand, Order>
         };
 
         await _orderRepository.AddOrderAsync(order);
-        await _cartItemRepository.ClearCartAsync(cartItems);
+        await _cartItemRepository.ClearCartAsync(request.UserId);
         await _unitOfWork.CommitChangesAsync();
         return order;
     }

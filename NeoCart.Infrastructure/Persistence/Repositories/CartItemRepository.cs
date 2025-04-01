@@ -20,7 +20,7 @@ public class CartItemRepository : ICartItemRepository
         if (includeProduct)
             cartItems = cartItems.Include(c => c.Product);
 
-        return Task.FromResult(cartItems.AsQueryable());
+        return Task.FromResult(cartItems);
     }
 
     public async Task<CartItem?> AddCartItemAsync(CartItem cartItem)
@@ -48,9 +48,8 @@ public class CartItemRepository : ICartItemRepository
         return Task.CompletedTask;
     }
 
-    public Task ClearCartAsync(IEnumerable<CartItem> cartItems)
+    public async Task<int> ClearCartAsync(Guid userId)
     {
-        _context.CartItems.RemoveRange(cartItems);
-        return Task.CompletedTask;
+        return await _context.CartItems.Where(cartItem => cartItem.UserId == userId).ExecuteDeleteAsync();
     }
 }

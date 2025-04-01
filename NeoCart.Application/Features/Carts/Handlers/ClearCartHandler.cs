@@ -17,10 +17,8 @@ public class ClearCartHandler : IRequestHandler<ClearCartCommand>
 
     public async Task Handle(ClearCartCommand request, CancellationToken cancellationToken)
     {
-        await _cartItemRepository.ClearCartAsync(
-            (await _cartItemRepository.GetAllCartItemsAsync())
-            .Where(cartItem => cartItem.UserId == request.UserId));
-        
+        await _cartItemRepository.ClearCartAsync(request.UserId);
+
         await _unitOfWork.CommitChangesAsync();
     }
 }

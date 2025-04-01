@@ -3,4 +3,4 @@ using NeoCart.Domain.Entities;
 
 namespace NeoCart.Application.Features.Reviews.Commands;
 
-public record EditReviewCommand(Review Review) : IRequest<Review>;
+public record UpdateReviewCommand(Review Review) : IRequest<Review>;

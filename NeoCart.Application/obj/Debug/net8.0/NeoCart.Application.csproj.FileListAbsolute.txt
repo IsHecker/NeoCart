@@ -13,3 +13,4 @@ C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Application\obj\Debug\net8.0\NeoCa
 C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Application\obj\Debug\net8.0\refint\NeoCart.Application.dll
 C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Application\obj\Debug\net8.0\NeoCart.Application.pdb
 C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Application\obj\Debug\net8.0\ref\NeoCart.Application.dll
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Application\obj\Debug\net8.0\NeoCart.Application.sourcelink.json

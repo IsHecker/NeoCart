@@ -1,14 +1,13 @@
-namespace NeoCart.Application.Common;
+namespace NeoCart.Application.DTOs.FilterOptions;
 
-public class GetAllProductsOptions
+public class ProductsFilter
 {
     public string? Name { get; set; }
     public int? Year { get; set; }
     public Guid? SellerId { get; set; }
     public string? SortField { get; set; }
     public SortOrder? SortOrder { get; set; }
-    public required int PageNumber { get; set; }
-    public required int PageSize { get; set; }
+    public bool IncludeReviews { get; set; }
 }
 
 public enum SortOrder

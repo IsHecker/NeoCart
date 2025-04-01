@@ -16,6 +16,7 @@ public class GetUserOrdersHandler : IRequestHandler<GetUserOrdersQuery, IEnumera
 
     public async Task<IEnumerable<Order>> Handle(GetUserOrdersQuery request, CancellationToken cancellationToken)
     {
-        return await _orderRepository.GetOrderByUserIdAsync(request.UserId) ?? [];
+        return (await _orderRepository.GetOrderByUserIdAsync(request.UserId, request.IncludeOrderItems))?
+            .Paginate(request.PaginationParams) ?? Enumerable.Empty<Order>();
     }
 }

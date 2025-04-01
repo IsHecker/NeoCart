@@ -16,3 +16,4 @@ C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Infrastructure\obj\Debug\net8.0\re
 C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Infrastructure\obj\Debug\net8.0\NeoCart.Infrastructure.pdb
 C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Infrastructure\obj\Debug\net8.0\ref\NeoCart.Infrastructure.dll
 C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Infrastructure\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Infrastructure\obj\Debug\net8.0\NeoCart.Infrastructure.sourcelink.json

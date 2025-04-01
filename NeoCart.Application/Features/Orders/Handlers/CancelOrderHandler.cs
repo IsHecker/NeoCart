@@ -17,14 +17,11 @@ public class CancelOrderHandler : IRequestHandler<CancelOrderCommand>
 
     public async Task Handle(CancelOrderCommand request, CancellationToken cancellationToken)
     {
-        var order = await _orderRepository.GetOrderByIdAsync(request.Id);
-        if (order is null)
+        var deletedOrders = await _orderRepository.RemoveOrderAsync(request.Id);
+
+        if (deletedOrders < 1)
             throw new KeyNotFoundException("Order not found");
-        
-        if (order.Status != "Pending")
-            return;
-        
-        await _orderRepository.RemoveOrderAsync(order);
+
         await _unitOfWork.CommitChangesAsync();
     }
 }

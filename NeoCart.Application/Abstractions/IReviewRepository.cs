@@ -6,5 +6,5 @@ public interface IReviewRepository
 {
     Task<IQueryable<Review>> GetAllReviewsAsync(bool includeProduct = false);
     Task<Review> UpdateReviewAsync(Review review);
-    Task DeleteReviewAsync(Guid id);
+    Task<int> DeleteReviewAsync(Guid id);
 }

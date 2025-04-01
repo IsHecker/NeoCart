@@ -13,11 +13,11 @@ public class GetUserCartHandler : IRequestHandler<GetUserCartQuery, IEnumerable<
     {
         _cartItemRepository = cartItemRepository;
     }
-    
+
 
     public async Task<IEnumerable<CartItem>> Handle(GetUserCartQuery request, CancellationToken cancellationToken)
     {
         var cartItems = await _cartItemRepository.GetAllCartItemsAsync(true);
-        return cartItems.Where(c => c.UserId == request.UserId);
+        return cartItems.Where(c => c.UserId == request.UserId).Paginate(request.PaginationParams);
     }
 }

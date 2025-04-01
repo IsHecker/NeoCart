@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NeoCart.Api.Mapping;
 using NeoCart.Application.Common;
+using NeoCart.Application.DTOs;
 using NeoCart.Application.Features.Reviews.Commands;
 using NeoCart.Application.Features.Reviews.Queries;
 using NeoCart.Contracts.Common;
@@ -25,10 +26,10 @@ public class ReviewController : ControllerBase
 
     [AllowAnonymous]
     [HttpGet(ApiEndpoints.Reviews.GetByProduct)]
-    public async Task<IActionResult> GetProductReviews(Guid productId, [FromQuery] PaginationRequest paginationRequest)
+    public async Task<IActionResult> GetProductReviews(Guid productId, [FromQuery] PaginationParams paginationParams)
     {
-        var reviews = await _mediator.Send(new GetProductReviewsQuery(productId));
-        return Ok(reviews.ToResponse(paginationRequest));
+        var reviews = await _mediator.Send(new GetProductReviewsQuery(productId, paginationParams));
+        return Ok(reviews.ToResponse(paginationParams));
     }
 
     [HttpPost(ApiEndpoints.Reviews.Add)]
@@ -40,9 +41,9 @@ public class ReviewController : ControllerBase
     }
 
     [HttpPut(ApiEndpoints.Reviews.Update)]
-    public async Task<IActionResult> EditReview(Guid id, [FromBody] EditReviewRequest request)
+    public async Task<IActionResult> UpdateReview(Guid id, [FromBody] UpdateReviewRequest request)
     {
-        var review = await _mediator.Send(new EditReviewCommand(request.ToReview(id, User.GetUserId())));
+        var review = await _mediator.Send(new UpdateReviewCommand(request.ToReview(id, User.GetUserId())));
         return Ok(review.ToResponse());
     }
 

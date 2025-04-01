@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NeoCart.Api.Mapping;
 using NeoCart.Application.Common;
+using NeoCart.Application.DTOs;
+using NeoCart.Application.DTOs.FilterOptions;
 using NeoCart.Application.Features.Product.Queries;
 using NeoCart.Application.Features.Products.Commands;
 using NeoCart.Application.Features.Products.Queries;
@@ -27,18 +29,20 @@ public class ProductController : ControllerBase
     [AllowAnonymous]
     [HttpGet(ApiEndpoints.Products.GetAll)]
     public async Task<IActionResult> GetAllProducts(
-        [FromQuery] GetAllProductsRequest request,
-        [FromQuery] PaginationRequest paginationRequest)
+        [FromQuery] ProductsFilterRequest request,
+        [FromQuery] PaginationParams paginationParams)
     {
-        var products = await _mediator.Send(new GetAllProductsQuery(request.MapToOptions(paginationRequest)));
-        return Ok(products.ToResponse(paginationRequest));
+        var products = await _mediator.Send(
+            new GetAllProductsQuery(request.ToFilter(), paginationParams));
+
+        return Ok(products.ToResponse(paginationParams));
     }
 
     [AllowAnonymous]
     [HttpGet(ApiEndpoints.Products.GetById)]
     public async Task<IActionResult> GetProductById(Guid id)
     {
-        var product = await _mediator.Send(new GetProductbyIDQuery(id));
+        var product = await _mediator.Send(new GetProductbyIdQuery(id));
         return Ok(product.ToResponse());
     }
 

@@ -9,3 +9,10 @@ C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Contracts\obj\Debug\net8.0\NeoCart
 C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Contracts\obj\Debug\net8.0\refint\NeoCart.Contracts.dll
 C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Contracts\obj\Debug\net8.0\NeoCart.Contracts.pdb
 C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Contracts\obj\Debug\net8.0\ref\NeoCart.Contracts.dll
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Contracts\obj\Debug\net8.0\NeoCart.Contracts.sourcelink.json
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Contracts\bin\Debug\net8.0\NeoCart.Application.dll
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Contracts\bin\Debug\net8.0\NeoCart.Domain.dll
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Contracts\bin\Debug\net8.0\NeoCart.Application.pdb
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Contracts\bin\Debug\net8.0\NeoCart.Domain.pdb
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Contracts\obj\Debug\net8.0\NeoCart.Contracts.csproj.AssemblyReference.cache
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Contracts\obj\Debug\net8.0\NeoCart.Contracts.csproj.CopyComplete

@@ -21,9 +21,7 @@ public class ReviewRepository : IReviewRepository
         if (includeProduct)
             reviews = reviews.Include(r => r.Product);
 
-        return Task.FromResult(reviews.AsQueryable());
-
-        return Task.FromResult(_context.Reviews.AsQueryable());
+        return Task.FromResult(reviews);
     }
 
     public async Task<Review> UpdateReviewAsync(Review review)
@@ -43,9 +41,8 @@ public class ReviewRepository : IReviewRepository
         return reviewToUpdate;
     }
 
-    public Task DeleteReviewAsync(Guid id)
+    public async Task<int> DeleteReviewAsync(Guid id)
     {
-        _context.Reviews.Remove(new Review { Id = id, Rating = 0, ProductId = Guid.Empty, UserId = Guid.Empty });
-        return Task.CompletedTask;
+        return await _context.Reviews.Where(r => r.Id == id).ExecuteDeleteAsync();
     }
 }

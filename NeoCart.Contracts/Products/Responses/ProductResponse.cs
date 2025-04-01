@@ -13,7 +13,6 @@ public class ProductResponse
     public required decimal Price { get; set; }
     public required Guid SellerId { get; set; }
 
-    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public IEnumerable<ReviewResponse>? Reviews { get; set; }
 
     public DateTime DateCreated { get; set; }

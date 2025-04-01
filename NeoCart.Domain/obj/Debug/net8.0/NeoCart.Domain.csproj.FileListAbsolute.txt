@@ -9,3 +9,4 @@ C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Domain\obj\Debug\net8.0\NeoCart.Do
 C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Domain\obj\Debug\net8.0\refint\NeoCart.Domain.dll
 C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Domain\obj\Debug\net8.0\NeoCart.Domain.pdb
 C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Domain\obj\Debug\net8.0\ref\NeoCart.Domain.dll
+C:\Users\Mhamed\RiderProjects\NeoCart\NeoCart.Domain\obj\Debug\net8.0\NeoCart.Domain.sourcelink.json

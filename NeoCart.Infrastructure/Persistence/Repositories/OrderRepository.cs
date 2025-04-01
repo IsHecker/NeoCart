@@ -21,7 +21,7 @@ public class OrderRepository : IOrderRepository
         if (includeOrderItem)
             orders = orders.Include(c => c.OrderItems);
 
-        return Task.FromResult(orders.AsQueryable());
+        return Task.FromResult(orders);
     }
 
     public Task<IQueryable<OrderItem>> GetAllOrderItemsAsync()
@@ -36,11 +36,14 @@ public class OrderRepository : IOrderRepository
             .FirstOrDefaultAsync(order => order.Id == id);
     }
 
-    public Task<IEnumerable<Order>?> GetOrderByUserIdAsync(Guid userId)
+    public Task<IQueryable<Order>?> GetOrderByUserIdAsync(Guid userId, bool includeOrderItems = false)
     {
-        return Task.FromResult<IEnumerable<Order>?>(_context.Orders
-            .Include(order => order.OrderItems)
-            .Where(order => order.UserId == userId));
+        IQueryable<Order> orders = _context.Orders;
+
+        if (includeOrderItems)
+            orders = orders.Include(order => order.OrderItems);
+
+        return Task.FromResult<IQueryable<Order>?>(orders.Where(order => order.UserId == userId));
     }
 
     public async Task AddOrderAsync(Order order)
@@ -48,9 +51,8 @@ public class OrderRepository : IOrderRepository
         await _context.Orders.AddAsync(order);
     }
 
-    public Task RemoveOrderAsync(Order order)
+    public async Task<int> RemoveOrderAsync(Guid id)
     {
-        _context.Orders.Remove(order);
-        return Task.CompletedTask;
+        return await _context.Orders.Where(order => order.Id == id).ExecuteDeleteAsync();
     }
 }

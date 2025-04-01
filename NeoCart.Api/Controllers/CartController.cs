@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NeoCart.Api.Mapping;
 using NeoCart.Application.Common;
+using NeoCart.Application.DTOs;
 using NeoCart.Application.Features.Carts.Commands;
 using NeoCart.Application.Features.Carts.Queries;
 using NeoCart.Contracts.Carts.Requests;
@@ -23,10 +24,10 @@ public class CartController : ControllerBase
     }
 
     [HttpGet(ApiEndpoints.Carts.GetUserCart)]
-    public async Task<IActionResult> GetUserCart([FromQuery] PaginationRequest paginationRequest)
+    public async Task<IActionResult> GetUserCart([FromQuery] PaginationParams paginationParams)
     {
-        var cartItems = await _mediator.Send(new GetUserCartQuery(User.GetUserId()));
-        return Ok(cartItems.ToResponse(paginationRequest));
+        var cartItems = await _mediator.Send(new GetUserCartQuery(User.GetUserId(), paginationParams));
+        return Ok(cartItems.ToResponse(paginationParams));
     }
     
     [HttpPost(ApiEndpoints.Carts.AddItem)]

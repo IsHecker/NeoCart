@@ -14,8 +14,8 @@ public class SellerDashboardDto
 
 public class TopSellingProductDto
 {
-    public Guid ProductId { get; set; } // Product Identifier
-    public string ProductName { get; set; } // Product Name
-    public int TotalQuantitySold { get; set; } // Total units sold
-    public decimal TotalRevenue { get; set; } // Total earnings from this product (Quantity * Price)
+    public Guid ProductId { get; init; }
+    public required string ProductName { get; init; }
+    public int TotalQuantitySold { get; init; }
+    public decimal TotalRevenue { get; init; } // Total earnings from this product (Quantity * Price)
 }

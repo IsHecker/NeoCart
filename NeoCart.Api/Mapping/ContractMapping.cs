@@ -1,5 +1,6 @@
 using NeoCart.Application.Common;
 using NeoCart.Application.DTOs;
+using NeoCart.Application.DTOs.FilterOptions;
 using NeoCart.Contracts.Authentications;
 using NeoCart.Contracts.Carts.Requests;
 using NeoCart.Contracts.Carts.Responses;
@@ -51,7 +52,7 @@ public static class ContractMapping
         };
     }
 
-    public static Review ToReview(this EditReviewRequest request, Guid reviewId, Guid userId)
+    public static Review ToReview(this UpdateReviewRequest request, Guid reviewId, Guid userId)
     {
         return new Review
         {
@@ -107,18 +108,18 @@ public static class ContractMapping
             Rating = product.Rating,
             TotalRatings = product.TotalRatings,
             Price = product.Price,
-            Reviews = product.Reviews?.Select(ToResponse),
+            Reviews = product.Reviews.Count > 0 ? product.Reviews.Select(ToResponse) : null,
             DateCreated = product.DateCreated
         };
     }
 
-    public static ProductsResponse ToResponse(this IEnumerable<Product> products, PaginationRequest paginationRequest)
+    public static ProductsResponse ToResponse(this IEnumerable<Product> products, PaginationParams paginationParams)
     {
         return new ProductsResponse
         {
             Items = products.Select(ToResponse),
-            PageNumber = paginationRequest.PageNumber,
-            PageSize = paginationRequest.PageSize
+            PageNumber = paginationParams.PageNumber,
+            PageSize = paginationParams.PageSize
         };
     }
 
@@ -135,13 +136,13 @@ public static class ContractMapping
         };
     }
 
-    public static ReviewsResponse ToResponse(this IEnumerable<Review> reviews, PaginationRequest paginationRequest)
+    public static ReviewsResponse ToResponse(this IEnumerable<Review> reviews, PaginationParams paginationParams)
     {
         return new ReviewsResponse
         {
             Items = reviews.Select(ToResponse),
-            PageNumber = paginationRequest.PageNumber,
-            PageSize = paginationRequest.PageSize
+            PageNumber = paginationParams.PageNumber,
+            PageSize = paginationParams.PageSize
         };
     }
 
@@ -155,13 +156,13 @@ public static class ContractMapping
         };
     }
 
-    public static CartResponse ToResponse(this IEnumerable<CartItem> cartItems, PaginationRequest paginationRequest)
+    public static CartResponse ToResponse(this IEnumerable<CartItem> cartItems, PaginationParams paginationParams)
     {
         return new CartResponse
         {
             Items = cartItems.Select(ToResponse),
-            PageNumber = paginationRequest.PageNumber,
-            PageSize = paginationRequest.PageSize
+            PageNumber = paginationParams.PageNumber,
+            PageSize = paginationParams.PageSize
         };
     }
 
@@ -189,21 +190,20 @@ public static class ContractMapping
         };
     }
 
-    public static OrderResponses ToResponse(this IEnumerable<Order> orders, PaginationRequest paginationRequest)
+    public static OrderResponses ToResponse(this IEnumerable<Order> orders, PaginationParams paginationParams)
     {
         return new OrderResponses
         {
             Items = orders.Select(ToResponse),
-            PageNumber = paginationRequest.PageNumber,
-            PageSize = paginationRequest.PageSize
+            PageNumber = paginationParams.PageNumber,
+            PageSize = paginationParams.PageSize
         };
     }
 
 
-    public static GetAllProductsOptions MapToOptions(this GetAllProductsRequest request,
-        PaginationRequest paginationRequest)
+    public static ProductsFilter ToFilter(this ProductsFilterRequest request)
     {
-        return new GetAllProductsOptions
+        return new ProductsFilter
         {
             Name = request.Name,
             Year = request.Year,
@@ -211,9 +211,7 @@ public static class ContractMapping
             SortField = request.SortBy?.TrimStart('-', '+'),
             SortOrder = request.SortBy is null ? SortOrder.Unsorted :
                 request.SortBy.StartsWith('-') ? SortOrder.Descending : SortOrder.Ascending,
-
-            PageNumber = paginationRequest.PageNumber,
-            PageSize = paginationRequest.PageSize
+            IncludeReviews = request.Reviews
         };
     }
 }

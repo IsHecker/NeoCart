@@ -1,6 +1,6 @@
-namespace NeoCart.Application.Common;
+namespace NeoCart.Application.DTOs;
 
-public class Pagination
+public class PaginationParams
 {
     public const int DefaultPageNumber = 1;
     public const int DefaultPageSize = 5;

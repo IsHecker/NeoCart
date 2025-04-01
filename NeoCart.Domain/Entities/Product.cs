@@ -14,7 +14,6 @@ public class Product : BaseEntity
 
 
     public ICollection<CartItem>? CartItems { get; private set; }
-    //public IReadOnlyCollection<Review>? Reviews { get; private set; }
 
     private readonly List<Review> _reviews = [];
     public IReadOnlyCollection<Review> Reviews => _reviews;

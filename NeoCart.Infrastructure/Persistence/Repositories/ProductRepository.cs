@@ -15,18 +15,14 @@ public class ProductRepository : IProductRepository
         _context = context;
     }
 
-    // public Task<IEnumerable<Product>> GetAllProductsAsync(GetAllProductsOptions options)
-    // {
-    //     // return Task.FromResult<IEnumerable<Product>>(_context.Products
-    //     //     .Include(p => p.Reviews)
-    //     //     .Skip(options.PageSize!.Value * (options.PageNumber!.Value - 1))
-    //     //     .Take(options.PageSize.Value));
-    // }
-    
-    public Task<IQueryable<Product>> GetAllProductsAsync()
+    public Task<IQueryable<Product>> GetAllProductsAsync(bool includeReviews = false)
     {
-        return Task.FromResult<IQueryable<Product>>(_context.Products
-            .Include(p => p.Reviews));
+        IQueryable<Product> products = _context.Products;
+
+        if (includeReviews)
+            products = products.Include(p => p.Reviews);
+
+        return Task.FromResult(products);
     }
 
     public async Task<Product?> GetProductByIdAsync(Guid id)
@@ -44,17 +40,11 @@ public class ProductRepository : IProductRepository
 
     public async Task<Product> UpdateProductAsync(Product product)
     {
-        var productToUpdate = await _context.Products.FindAsync(product.Id);
+        var productToUpdate = await _context.Products.AsTracking()
+            .FirstOrDefaultAsync(p => p.Id == product.Id);
 
         if (productToUpdate is null)
             throw new KeyNotFoundException();
-
-        // _context.Entry(productToUpdate).CurrentValues.SetValues(new
-        // {
-        //     product.Name,
-        //     product.Description,
-        //     product.Price,
-        // });
 
         productToUpdate.Name = product.Name.IsNullOrEmpty() ? productToUpdate.Name : product.Name;
         productToUpdate.Description = product.Description ?? productToUpdate.Description;
@@ -64,9 +54,8 @@ public class ProductRepository : IProductRepository
         return productToUpdate;
     }
 
-    public Task DeleteProductAsync(Guid id)
+    public async Task<int> DeleteProductAsync(Guid id)
     {
-        _context.Products.Remove(new Product { Id = id, Name = null!, Price = 0, SellerId = Guid.Empty });
-        return Task.CompletedTask;
+        return await _context.Products.Where(p => p.Id == id).ExecuteDeleteAsync();
     }
 }

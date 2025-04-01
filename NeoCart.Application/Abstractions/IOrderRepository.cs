@@ -7,7 +7,7 @@ public interface IOrderRepository
     Task<IQueryable<Order>> GetAllOrdersAsync(bool includeOrderItem = false);
     Task<IQueryable<OrderItem>> GetAllOrderItemsAsync();
     Task<Order?> GetOrderByIdAsync(Guid id);
-    Task<IEnumerable<Order>?> GetOrderByUserIdAsync(Guid userId);
+    Task<IQueryable<Order>?> GetOrderByUserIdAsync(Guid userId, bool includeOrderItems = false);
     Task AddOrderAsync(Order order);
-    Task RemoveOrderAsync(Order order);
+    Task<int> RemoveOrderAsync(Guid id);
 }
